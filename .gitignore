@@ -40,3 +40,6 @@ next-env.d.ts
 
 # VSCode settings
 .vscode
+
+# Dependencies Analytics
+target
