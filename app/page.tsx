@@ -1,7 +1,3 @@
-import { Mukta } from "next/font/google";
-
-const mukta = Mukta({ weight: "400", subsets: ["latin"] });
-
 export default function Home() {
-  return <main style={mukta.style} className=""></main>;
+  return <main className="bg-secondary w-4/5 m-3 rounded-3xl"></main>;
 }
