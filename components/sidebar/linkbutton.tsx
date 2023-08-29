@@ -17,9 +17,7 @@ const LinkButton = ({ className, link }: Props) => {
       asChild
     >
       <Link href={link.href} className="flex space-x-4">
-        {
-          <link.icon className="stroke-secondary group-hover:stroke-primary" />
-        }
+        {<link.icon className="stroke-secondary group-hover:stroke-primary" />}
         <p className="text-secondary group-hover:text-primary text-xl hidden md:block">
           {link.text}
         </p>
