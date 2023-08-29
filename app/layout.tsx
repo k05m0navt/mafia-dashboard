@@ -1,6 +1,6 @@
 import Sidebar, { SidebarLink } from "@/components/sidebar/sidebar";
 import { Analytics } from "@vercel/analytics/react";
-import { Home, Table, Users } from "lucide-react";
+import { Home, PlusSquare, Table, Users } from "lucide-react";
 import { Mukta } from "next/font/google";
 import "./globals.css";
 
@@ -10,22 +10,31 @@ export const metadata = {
   title: process.env.PROJECT_NAME,
 };
 
-const links: SidebarLink[] = [
-  {
-    href: "/",
-    text: "Home",
-    icon: Home,
-  },
-  {
-    href: "/",
-    text: "Table",
-    icon: Table,
-  },
-  {
-    href: "/",
-    text: "Players",
-    icon: Users,
-  },
+const links: SidebarLink[][] = [
+  [
+    {
+      href: "/",
+      text: "Home",
+      icon: Home,
+    },
+    {
+      href: "/table",
+      text: "Table",
+      icon: Table,
+    },
+    {
+      href: "/players",
+      text: "Players",
+      icon: Users,
+    },
+  ],
+  [
+    {
+      href: "/game",
+      text: "Game",
+      icon: PlusSquare,
+    },
+  ],
 ];
 
 export default function RootLayout({
@@ -38,7 +47,9 @@ export default function RootLayout({
       <body style={mukta400.style} className="bg-primary flex">
         <Analytics />
         <Sidebar links={links} />
-        {children}
+        <main className="h-[calc(100vh-0.75rem*2)] bg-secondary m-3 w-4/5 rounded-3xl">
+          {children}
+        </main>
       </body>
     </html>
   );
